@@ -107,13 +107,12 @@ def main():
 			log(logfile, "DEBUG: name = %s" % name,0)
 			log(logfile, "DEBUG: ext = %s" % ext,0)
 
-			# Get the RAW name
+			# Get the parent file name (RAW)
 			subname, subext = os.path.splitext(name)
 			log(logfile, "DEBUG: subname = %s" % subname,0)
 			log(logfile, "DEBUG: subext = %s" % subext,0)
-			log(logfile, "DEBUG: %s" % (subname+RAW_EXT),0)
 			
-			if (os.path.isfile(folder+"/"+subname+RAW_EXT) == 0):
+			if (os.path.isfile(folder+"/"+name) == 0):
 				os.remove(folder+"/"+fullname)
 				log(logfile, (folder+"/"+fullname+" removed"),1)
 			else:
